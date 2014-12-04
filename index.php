@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!-- Copyright 2014 de Participa Mulher / Autores: Gabriel Pita, Luciano Quintão e Ludmille Diniz Este arquivo é parte do programa Participa Mulher. 
+O Participa Mulher é um software livre; você pode redistribuí-lo e/ou modificá-lo dentro dos termos da 
+[GNU General Public License OU GNU Affero General Public License] como publicada pela Fundação do Software Livre (FSF); 
+na versão 3 da Licença. Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; 
+sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. Veja a licença para maiores detalhes. 
+Você deve ter recebido uma cópia da [GNU General Public License OU GNU Affero General Public License], sob o título "LICENCA.txt",
+junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt -->
+
 <html lang="pt-br" class="no-js">
   <head>
     <meta charset="utf-8">
@@ -7,9 +15,9 @@
     <meta content="Site de integração entre as politicas púvblicas e orçamento da união" name="description">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
     <link href="assets/images/favicon.ico" rel="shortcut icon"/> 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/apple-touch-icon-144x144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/apple-touch-icon-114x114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/apple-touch-icon-72x72-precomposed.png" />    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png" />    
     <!-- JS FILES -->
     <script type="text/javascript" src="assets/js/jquery-1.20.2.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery-migrate-1.2.1.min.js"></script>
@@ -60,7 +68,6 @@
             
         }); //ready
     </script>
-
 
     <!-- CARROUSEL -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
@@ -778,7 +785,7 @@
                                     <div class="contact-icon"><i class="icon-call-in"></i></div>
                                     <div class="contact-bg">
                                         <div class="contact-name">Telefone</div>
-                                        <div class="contact-tel">+ 55 71 3333 3333<br><span>Atendimento: 9am ás 6pm</span></div>
+                                        <div class="contact-tel">+ 55 71 3374-5471<br><span>Atendimento: 9am ás 6pm</span></div>
                                     </div>
                                 </div>
                             </div>
@@ -808,33 +815,48 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12 marg75">
+                            <p>Colabore com nosso projeto. Junte-se a nós. Vamos juntos elevar a participação da mulher na vida pública e garantir seus direitos.
+                            “Participa, Mulher” é um projeto colaborativo que nasceu na Maratona Hacker 2014 realizado pela Câmara dos Deputados, em Brasília, 
+                            e foi idealizado e desenvolvido por Lud Diniz (designer), Gabriel Pita (programador) e Luciano Quintão (pesquisador). </p>
+                            
+                            <p>Temos aqui uma solução web, de código livre e aberto, que integra os dados e informações sobre execução das políticas 
+                            públicas para mulheres (com base nos gastos do governo federal), a legislação mulher completa e ainda a rede de atendimento e proteção contra a violência.
+
+                            <p>A ideia central de nosso projeto é promover o livre acesso às informações públicas, de forma facilitada e interativa. 
+                            As mulheres brasileiras têm agora uma ferramenta digital, inédita e gratuita, de monitoramento dos programas de governo 
+                            e do orçamento público para as mulheres. </p>
+
+                            <p>Além disso, com uma pesquisa rápida, as mulheres podem aqui consultar a legislação
+                            e os contatos de toda à rede de atendimento, incluindo delegacias especializadas, casas de acolhimento, defensorias, entre outros.</p>
+
+                             <p>Envie sua sugestão, colabore, ou utilize nosso código livre e aberto para novos projetos. </p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12 marg75">
                             <div class="row">
                                 <form action="assets/php/send.php" method="post" id="contactForm">
                                     <div class="col-lg-12">
                                         <p class="text_cont"><input type="text" name="name" placeholder="Nome" class="input-cont"></p>
-                                        <div class="alert alert-danger error" id="nameError"><i class="icon-ban"></i> Oh snap! Name field can't stay empty.</div>
+                                        <div class="alert alert-danger error" id="nameError"><i class="icon-ban"></i> Preencha o campo Nome.</div>
                                     </div>
                                     <div class="col-lg-12">
                                         <p class="text_cont"><input type="text" name="email" placeholder="E-mail" class="input-cont"></p>
-                                        <div class="alert alert-danger error" id="emailError"><i class="icon-ban"></i> Oh snap! There was a mistake when writing a e-mail.</div>
+                                        <div class="alert alert-danger error" id="emailError"><i class="icon-ban"></i> Preencha o campo E-mail.</div>
                                     </div>
                                     <div class="col-lg-12">
                                         <p class="text_cont"><input type="text" name="subject" placeholder="Assunto" class="input-cont"></p>
-                                        <div class="alert alert-danger error" id="subjectError"><i class="icon-ban"></i> Oh snap! Subject field can't stay empty.</div>
+                                        <div class="alert alert-danger error" id="subjectError"><i class="icon-ban"></i> Preencha o campo Assunto.</div>
 
                                     </div>
                                     <div class="col-lg-12">
                                         <p class="text_cont"><textarea name="message" placeholder="Mensagem" id="message" class="input-cont-textarea" cols="30" rows="8"></textarea></p>
-                                        <div class="alert alert-danger error" id="messageError"><i class="icon-ban"></i> Oh snap! This field can't stay empty.</div>
-                                        <div class="alert alert-success success" id="success"><i class="icon-check"></i> Well done! You message is successfully sent.</div>
+                                        <div class="alert alert-danger error" id="messageError"><i class="icon-ban"></i> Preencha o campo de Mensagem.</div>
+                                        <div class="alert alert-success success" id="success"><i class="icon-check"></i> Tudo Certo! Sua Mensagem foi enviada com Sucesso.</div>
                                     </div>
                                     <div class="col-lg-12"><p><input type="submit" id="send" class="btn btn-send" value="Enviar Mensagem" /></p></div>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-ms-12 marg75">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.520996844859!2d-38.508975!3d-13.00246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716036156d75477%3A0x5f96cd445ba8f856!2sUniversidade+Federal+da+Bahia!5e0!3m2!1spt-BR!2sbr!4v1417098564847" width="100%" height="390" frameborder="0" style="border:0"></iframe>                            
-                        </div>
+
                     </div>
                 </div>
             </div>
