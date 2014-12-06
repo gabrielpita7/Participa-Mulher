@@ -3,7 +3,7 @@
 <xml>
     <Addresses>
         <!-- put your email here -->
-        <address>dankov.theme@gmail.com</address>
+        <address>participamulher@gmail.com</address>
     </Addresses>
     <Config>
         <smtp>

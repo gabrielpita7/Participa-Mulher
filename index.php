@@ -25,6 +25,7 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
     <script type="text/javascript" src="assets/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
     <script type="text/javascript" src="assets/js/jquery.mobile.custom.min.js"></script>
+    <script type="text/javascript" src="assets/js/geo.js"></script>
 
     <!-- CSS FILES -->
     <link href="assets/rs-plugin/css/settings.css" media="screen" rel="stylesheet" type="text/css" >
@@ -39,7 +40,9 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
     <?php require_once('assets/php/lib/parsecsv.lib.php'); ?>
 
     <!-- FUNCTIONS -->
-    <?php require_once('assets/php/lib/functions.php'); ?>
+    <?php require_once('assets/php/lib/functions.php'); 
+        //require_once('assets/php/geo.php');
+    ?>
 
     <!-- SCRIPTS -->
     <script type="text/javascript">
@@ -176,16 +179,12 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
             <?php
             # create new parseCSV object.
             $csv = new parseCSV();
-            # offset from the beginning of the file,
-            # ignoring the first X number of rows.
-           // $csv->offset = 1;
 
             # limit the number of returned rows.
-            $csv->limit = 3;
-
+            $csv->limit = 10;
 
             # Parse '_books.csv' using automatic delimiter detection.
-            $csv->auto('assets/csv/LOA_2014_TO.csv');
+            $csv->auto('assets/csv/LOA_2014_BRASIL.csv');
 
             ?>
             <div class="serv-bg politica" id="2">
@@ -193,6 +192,7 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
                     <div class="row marg75">
                         <div class="col-lg-12">
                             <div class="promo">Políticas Públicas</div>
+                            <?php /*<div id="geo" class="geolocation_data">teste</div>Voce está em <?php if (isset($UF)){echo $UF;} */ ?>
                             <div class="promo-p">Fique por Dentro do orçamento gasto em sua Região.</div>
                         </div>
                     </div>
@@ -285,9 +285,21 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
                                                     <h4 class="text-modal"><?php echo $row['Iniciativa (Cod/Desc)']; ?></h4>
                                                     
                                                   </div>
-                                                  <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" name="Fechar">Fechar</button>
-                                                    <button type="button" class="btn btn-primary">Falar com Orgão</button>
+                                                  <div class="modal-footer">                                                    
+                                                    <form action="participe.php" method="post" id="contactForm3">                                                        
+                                                        <input type="hidden" name="orgao" value="<?php echo $row['Órgão'] ?>">
+                                                        <input type="hidden" name="dotacao" value="<?php echo $row['Dotação Inicial']; ?>">
+                                                        <input type="hidden" name="autorizado" value="<?php echo $row['Autorizado']; ?>">
+                                                        <input type="hidden" name="pago" value="<?php echo $row['Pago'] ?>">                                                        
+                                                        <input type="hidden" name="acao" value="<?php echo $row['Ação (Cod/Desc)'] ?>">                                                        
+                                                        <input type="hidden" name="objetivo" value="<?php echo $row['Objetivo (Cod/Desc)'] ?>">                                                        
+                                                        <input type="hidden" name="iniciativa" value="<?php echo $row['Iniciativa (Cod/Desc)'] ?>">                                                        
+                                                        <div class="col-lg-12">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal" name="Fechar">Fechar</button>
+                                                            <input type="submit" id="send" class="btn btn-primary" value="Participe!" />
+                                                        </div>
+                                                    </form>
+                                                    <!-- <a href="participe.php"><button type="button" class="btn btn-primary">Participe!</button></a> -->
                                                   </div>
                                                 </div>
                                               </div>
@@ -348,8 +360,19 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
                                                 
                                               </div>
                                               <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal" name="Fechar">Fechar</button>
-                                                <button type="button" class="btn btn-primary">Falar com Orgão</button>
+                                                <form action="participe.php" method="post" id="contactForm3">                                                        
+                                                    <input type="hidden" name="orgao" value="<?php echo $row['Órgão'] ?>">
+                                                    <input type="hidden" name="dotacao" value="<?php echo $row['Dotação Inicial']; ?>">
+                                                    <input type="hidden" name="autorizado" value="<?php echo $row['Autorizado']; ?>">
+                                                    <input type="hidden" name="pago" value="<?php echo $row['Pago'] ?>">                                                        
+                                                    <input type="hidden" name="acao" value="<?php echo $row['Ação (Cod/Desc)'] ?>">                                                        
+                                                    <input type="hidden" name="objetivo" value="<?php echo $row['Objetivo (Cod/Desc)'] ?>">                                                        
+                                                    <input type="hidden" name="iniciativa" value="<?php echo $row['Iniciativa (Cod/Desc)'] ?>">                                                        
+                                                    <div class="col-lg-12">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal" name="Fechar">Fechar</button>
+                                                        <input type="submit" id="send" class="btn btn-primary" value="Participe!" />
+                                                    </div>
+                                                </form>
                                               </div>
                                             </div>
                                           </div>
@@ -381,8 +404,15 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
                         </div>
                     </div>
                     <!-- Campo de Pesquisa-->
-                    <div class="search-input marg50">
-                        <input type="text" title="Pesquisar na Legislação" placeholder="Pesquise Aqui...">
+                    <div class="search-input marg50">                        
+                         <form action="assets/php/legislacao.php" method="post" id="contactForm2">
+                            <div class="col-lg-12">
+                                <p class="text_cont"><input type="text" name="pesquisa" placeholder="Digite o que deseja pesquisar" class="input-cont"></p>
+                                <div class="alert alert-danger error" id="nameError"><i class="icon-ban"></i> Preencha o campo.</div>
+                            </div> 
+                            <div class="col-lg-12"><p><input type="submit" id="send" class="btn btn-send" value="Pesquisar" /></p></div>
+                        </form>
+                        <?php //echo $_POST['pesquisa']; ?>
                     </div>
                     <!--Palavras Mais Pesquisadas-->
                     <div class="row marg50">
