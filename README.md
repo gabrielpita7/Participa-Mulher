@@ -13,4 +13,12 @@ A ideia central de nosso projeto é promover o livre acesso às informações p�
 
 Envie sua sugestão, colabore, ou utilize nosso código livre e aberto para novos projetos. 
 
+Pendências: 
+1) Colocar o sistema geolocalização - Mostrar apenas informações do Estado / Cidade
+2) Colocar mensagem de mensagem enviada quando todos os campos forem preenchidos corretamente das politicas públicas
+3) Palavras mais procuradas da legislação
+4) Ativar fórum
+5) Arrumar as informações dos canais de atendimento
+
+
 
