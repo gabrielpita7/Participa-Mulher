@@ -227,7 +227,7 @@ junto com este programa, se não, acesse: http://participamulher.org/LICENCA.txt
                                 </ul>
                                 <div class="arrow-top"><a href="#" class="scroll"><i class="icon-arrow-up"></i></a></div>
                             </div>
-                            <div class="copyright">Copyright © 2014. Todos os direitos reservados. Participa Mulher! #HACKATON 2014</div>
+                            <div class="copyright">Participa Mulher! #HACKATON 2014</div>
                         </div>
                     </div>
                 </div>
